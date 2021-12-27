@@ -14,6 +14,9 @@
   <meta property="og:description" content="A simple HTML5 Template for new projects.">
   <meta property="og:image" content="image.png">
 
+  <meta name="theme-color" content="#b3f9ff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#331241" media="(prefers-color-scheme: dark)">
+
   <link rel="apple-touch-icon" sizes="57x57" href="src/favicon/apple-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="src/favicon/apple-icon-60x60.png">
   <link rel="apple-touch-icon" sizes="72x72" href="src/favicon/apple-icon-72x72.png">
@@ -32,15 +35,284 @@
   <meta name="msapplication-TileImage" content="src/favicon/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
 
-  <link href="normalize.css" rel="stylesheet" type="text/css"/>
-  <link href="style.css" rel="stylesheet" type="text/css"/>
+  <link href="normalize.css" rel="stylesheet" type="text/css" />
+  <link href="style.css" rel="stylesheet" type="text/css" />
 
 </head>
 
 <body>
-  <h1>Hello world!</h1>
-  <!-- your content here... -->
-  <script src="js/scripts.js"></script>
+
+  <header>
+    <h1>SensorHub Alpha</h1>
+    <h2>Station: Colony 56</h1>
+  </header>
+
+  <main>
+
+    <section class="a-box" id="dataBox01">
+      <div class="a-box-preview">
+        <div class="weather-title">Sensor XYZ</div>
+        <div class="weather-major">
+          <div class="weather-value-big">24°</div>
+          <div class="weather-graph">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100" xml:space="preserve">
+              <path stroke="#000" stroke-width="2" fill="none"
+                d="m0 76.65 19.234-18.647c6.661-6.458 13.436-12.998 21.155-16.706 1.416-.68 2.91-1.27 4.401-1.016 5.755.979 6.616 12.071 10.92 17.34 2.843 3.477 7.455 4.671 8.838 9.512.448 1.566.467 3.308.898 4.882 1.67 6.088 8.382 6.216 12.288 2.455 3.906-3.761 6.243-9.84 9.823-14.155 1.91-2.301 4.136-4.057 6.345-5.797l13.735-10.813c3.774-2.97 7.938-6.05 12.25-5.147 8.508 1.782 11.123 16.407 16.866 25.1 7.538 11.409 21.218 11.879 31.293 4.95 10.074-6.928 17.266-19.573 23.637-32.22 3.651-7.248 8.434-15.541 14.887-14.84 1.201.131 2.443.582 3.584.052 2.408-1.119 3.398-6.132 5.942-6.01 2.125.103 3.013 3.674 4.594 5.601 1.725 2.102 4.274 2.16 6.521 2.934 6.043 2.082 10.18 9.68 12.675 17.426 1.758 5.459 2.975 11.265 5.211 16.392s5.788 9.664 10.147 10.405c9.25-4.13 16.365-14.024 23.089-23.575L300 14" />
+            </svg>
+          </div>
+        </div>
+        <div class="weather-minor">
+          <div class="weather-value-small">64%</div>
+          <div class="weather-value-small">1250hPA
+            <div class="weather-value-icon-small">↘︎</div>
+          </div>
+        </div>
+      </div>
+      <div class="a-box-fullscreen">
+        <div class="a-box-fullscreen--inner">
+          <button aria-label="close" class="btn--integrated close-a-box-fullscreen">✕</button>
+          <button aria-label="swipe to close" class="btn--integrated swipeclose-a-box-fullscreen"><div class="--inner"></div></button>
+        </div>
+      </div>
+    </section>
+    <section class="a-box" id="dataBox02">
+      <div class="a-box-preview">
+        <div class="weather-title">Sensor XYZ</div>
+        <div class="weather-major">
+          <div class="weather-value-big">14°</div>
+          <div class="weather-graph">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100" xml:space="preserve">
+              <path stroke="#000" stroke-width="2" fill="none"
+                d="m0 76.65 19.234-18.647c6.661-6.458 13.436-12.998 21.155-16.706 1.416-.68 2.91-1.27 4.401-1.016 5.755.979 6.616 12.071 10.92 17.34 2.843 3.477 7.455 4.671 8.838 9.512.448 1.566.467 3.308.898 4.882 1.67 6.088 8.382 6.216 12.288 2.455 3.906-3.761 6.243-9.84 9.823-14.155 1.91-2.301 4.136-4.057 6.345-5.797l13.735-10.813c3.774-2.97 7.938-6.05 12.25-5.147 8.508 1.782 11.123 16.407 16.866 25.1 7.538 11.409 21.218 11.879 31.293 4.95 10.074-6.928 17.266-19.573 23.637-32.22 3.651-7.248 8.434-15.541 14.887-14.84 1.201.131 2.443.582 3.584.052 2.408-1.119 3.398-6.132 5.942-6.01 2.125.103 3.013 3.674 4.594 5.601 1.725 2.102 4.274 2.16 6.521 2.934 6.043 2.082 10.18 9.68 12.675 17.426 1.758 5.459 2.975 11.265 5.211 16.392s5.788 9.664 10.147 10.405c9.25-4.13 16.365-14.024 23.089-23.575L300 14" />
+            </svg>
+          </div>
+        </div>
+        <div class="weather-minor">
+          <div class="weather-value-small">64%</div>
+          <div class="weather-value-small">1250hPA
+            <div class="weather-value-icon-small">↘︎</div>
+          </div>
+        </div>
+      </div>
+      <div class="a-box-fullscreen">
+        <div class="a-box-fullscreen--inner">
+          <button aria-label="close" class="btn--integrated close-a-box-fullscreen">✕</button>
+          <button aria-label="swipe to close" class="btn--integrated swipeclose-a-box-fullscreen"><div class="--inner"></div></button>
+        </div>
+      </div>
+    </section>
+    <section class="a-box" id="dataBox03">
+      <div class="a-box-preview">
+        <div class="weather-title">Sensor XYZ</div>
+        <div class="weather-major">
+          <div class="weather-value-big">-4°</div>
+          <div class="weather-graph">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100" xml:space="preserve">
+              <path stroke="#000" stroke-width="2" fill="none"
+                d="m0 76.65 19.234-18.647c6.661-6.458 13.436-12.998 21.155-16.706 1.416-.68 2.91-1.27 4.401-1.016 5.755.979 6.616 12.071 10.92 17.34 2.843 3.477 7.455 4.671 8.838 9.512.448 1.566.467 3.308.898 4.882 1.67 6.088 8.382 6.216 12.288 2.455 3.906-3.761 6.243-9.84 9.823-14.155 1.91-2.301 4.136-4.057 6.345-5.797l13.735-10.813c3.774-2.97 7.938-6.05 12.25-5.147 8.508 1.782 11.123 16.407 16.866 25.1 7.538 11.409 21.218 11.879 31.293 4.95 10.074-6.928 17.266-19.573 23.637-32.22 3.651-7.248 8.434-15.541 14.887-14.84 1.201.131 2.443.582 3.584.052 2.408-1.119 3.398-6.132 5.942-6.01 2.125.103 3.013 3.674 4.594 5.601 1.725 2.102 4.274 2.16 6.521 2.934 6.043 2.082 10.18 9.68 12.675 17.426 1.758 5.459 2.975 11.265 5.211 16.392s5.788 9.664 10.147 10.405c9.25-4.13 16.365-14.024 23.089-23.575L300 14" />
+            </svg>
+          </div>
+        </div>
+        <div class="weather-minor">
+          <div class="weather-value-small">64%</div>
+          <div class="weather-value-small">1250hPA
+            <div class="weather-value-icon-small">↘︎</div>
+          </div>
+        </div>
+      </div>
+      <div class="a-box-fullscreen">
+        <div class="a-box-fullscreen--inner">
+          <button aria-label="close" class="btn--integrated close-a-box-fullscreen">✕</button>
+          <button aria-label="swipe to close" class="btn--integrated swipeclose-a-box-fullscreen"><div class="--inner"></div></button>
+        </div>
+      </div>
+    </section>
+    <section class="a-box" id="dataBox04">
+      <div class="a-box-preview">
+        <div class="weather-title">Sensor XYZ</div>
+        <div class="weather-major">
+          <div class="weather-value-big">24°</div>
+          <div class="weather-graph">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100" xml:space="preserve">
+              <path stroke="#000" stroke-width="2" fill="none"
+                d="m0 76.65 19.234-18.647c6.661-6.458 13.436-12.998 21.155-16.706 1.416-.68 2.91-1.27 4.401-1.016 5.755.979 6.616 12.071 10.92 17.34 2.843 3.477 7.455 4.671 8.838 9.512.448 1.566.467 3.308.898 4.882 1.67 6.088 8.382 6.216 12.288 2.455 3.906-3.761 6.243-9.84 9.823-14.155 1.91-2.301 4.136-4.057 6.345-5.797l13.735-10.813c3.774-2.97 7.938-6.05 12.25-5.147 8.508 1.782 11.123 16.407 16.866 25.1 7.538 11.409 21.218 11.879 31.293 4.95 10.074-6.928 17.266-19.573 23.637-32.22 3.651-7.248 8.434-15.541 14.887-14.84 1.201.131 2.443.582 3.584.052 2.408-1.119 3.398-6.132 5.942-6.01 2.125.103 3.013 3.674 4.594 5.601 1.725 2.102 4.274 2.16 6.521 2.934 6.043 2.082 10.18 9.68 12.675 17.426 1.758 5.459 2.975 11.265 5.211 16.392s5.788 9.664 10.147 10.405c9.25-4.13 16.365-14.024 23.089-23.575L300 14" />
+            </svg>
+          </div>
+        </div>
+        <div class="weather-minor">
+          <div class="weather-value-small">64%</div>
+          <div class="weather-value-small">1250hPA
+            <div class="weather-value-icon-small">↘︎</div>
+          </div>
+        </div>
+      </div>
+      <div class="a-box-fullscreen">
+        <div class="a-box-fullscreen--inner">
+          <button aria-label="close" class="btn--integrated close-a-box-fullscreen">✕</button>
+          <button aria-label="swipe to close" class="btn--integrated swipeclose-a-box-fullscreen"><div class="--inner"></div></button>
+        </div>
+      </div>
+    </section>
+    <section class="a-box" id="dataBox05">
+      <div class="a-box-preview">
+        <div class="weather-title">Sensor XYZ</div>
+        <div class="weather-major">
+          <div class="weather-value-big">24°</div>
+          <div class="weather-graph">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100" xml:space="preserve">
+              <path stroke="#000" stroke-width="2" fill="none"
+                d="m0 76.65 19.234-18.647c6.661-6.458 13.436-12.998 21.155-16.706 1.416-.68 2.91-1.27 4.401-1.016 5.755.979 6.616 12.071 10.92 17.34 2.843 3.477 7.455 4.671 8.838 9.512.448 1.566.467 3.308.898 4.882 1.67 6.088 8.382 6.216 12.288 2.455 3.906-3.761 6.243-9.84 9.823-14.155 1.91-2.301 4.136-4.057 6.345-5.797l13.735-10.813c3.774-2.97 7.938-6.05 12.25-5.147 8.508 1.782 11.123 16.407 16.866 25.1 7.538 11.409 21.218 11.879 31.293 4.95 10.074-6.928 17.266-19.573 23.637-32.22 3.651-7.248 8.434-15.541 14.887-14.84 1.201.131 2.443.582 3.584.052 2.408-1.119 3.398-6.132 5.942-6.01 2.125.103 3.013 3.674 4.594 5.601 1.725 2.102 4.274 2.16 6.521 2.934 6.043 2.082 10.18 9.68 12.675 17.426 1.758 5.459 2.975 11.265 5.211 16.392s5.788 9.664 10.147 10.405c9.25-4.13 16.365-14.024 23.089-23.575L300 14" />
+            </svg>
+          </div>
+        </div>
+        <div class="weather-minor">
+          <div class="weather-value-small">64%</div>
+          <div class="weather-value-small">1250hPA
+            <div class="weather-value-icon-small">↘︎</div>
+          </div>
+        </div>
+      </div>
+      <div class="a-box-fullscreen">
+        <div class="a-box-fullscreen--inner">
+          <button aria-label="close" class="btn--integrated close-a-box-fullscreen">✕</button>
+          <button aria-label="swipe to close" class="btn--integrated swipeclose-a-box-fullscreen"><div class="--inner"></div></button>
+        </div>
+      </div>
+    </section>
+    <section class="a-box" id="dataBox06">
+      <div class="a-box-preview">
+        <div class="weather-title">Sensor XYZ</div>
+        <div class="weather-major">
+          <div class="weather-value-big">24°</div>
+          <div class="weather-graph">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100" xml:space="preserve">
+              <path stroke="#000" stroke-width="2" fill="none"
+                d="m0 76.65 19.234-18.647c6.661-6.458 13.436-12.998 21.155-16.706 1.416-.68 2.91-1.27 4.401-1.016 5.755.979 6.616 12.071 10.92 17.34 2.843 3.477 7.455 4.671 8.838 9.512.448 1.566.467 3.308.898 4.882 1.67 6.088 8.382 6.216 12.288 2.455 3.906-3.761 6.243-9.84 9.823-14.155 1.91-2.301 4.136-4.057 6.345-5.797l13.735-10.813c3.774-2.97 7.938-6.05 12.25-5.147 8.508 1.782 11.123 16.407 16.866 25.1 7.538 11.409 21.218 11.879 31.293 4.95 10.074-6.928 17.266-19.573 23.637-32.22 3.651-7.248 8.434-15.541 14.887-14.84 1.201.131 2.443.582 3.584.052 2.408-1.119 3.398-6.132 5.942-6.01 2.125.103 3.013 3.674 4.594 5.601 1.725 2.102 4.274 2.16 6.521 2.934 6.043 2.082 10.18 9.68 12.675 17.426 1.758 5.459 2.975 11.265 5.211 16.392s5.788 9.664 10.147 10.405c9.25-4.13 16.365-14.024 23.089-23.575L300 14" />
+            </svg>
+          </div>
+        </div>
+        <div class="weather-minor">
+          <div class="weather-value-small">64%</div>
+          <div class="weather-value-small">1250hPA
+            <div class="weather-value-icon-small">↘︎</div>
+          </div>
+        </div>
+      </div>
+      <div class="a-box-fullscreen">
+        <div class="a-box-fullscreen--inner">
+          <button aria-label="close" class="btn--integrated close-a-box-fullscreen">✕</button>
+          <button aria-label="swipe to close" class="btn--integrated swipeclose-a-box-fullscreen"><div class="--inner"></div></button>
+        </div>
+      </div>
+    </section>
+    <section class="a-box" id="dataBox07">
+      <div class="a-box-preview">
+        <div class="weather-title">Sensor XYZ</div>
+        <div class="weather-major">
+          <div class="weather-value-big">24°</div>
+          <div class="weather-graph">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100" xml:space="preserve">
+              <path stroke="#000" stroke-width="2" fill="none"
+                d="m0 76.65 19.234-18.647c6.661-6.458 13.436-12.998 21.155-16.706 1.416-.68 2.91-1.27 4.401-1.016 5.755.979 6.616 12.071 10.92 17.34 2.843 3.477 7.455 4.671 8.838 9.512.448 1.566.467 3.308.898 4.882 1.67 6.088 8.382 6.216 12.288 2.455 3.906-3.761 6.243-9.84 9.823-14.155 1.91-2.301 4.136-4.057 6.345-5.797l13.735-10.813c3.774-2.97 7.938-6.05 12.25-5.147 8.508 1.782 11.123 16.407 16.866 25.1 7.538 11.409 21.218 11.879 31.293 4.95 10.074-6.928 17.266-19.573 23.637-32.22 3.651-7.248 8.434-15.541 14.887-14.84 1.201.131 2.443.582 3.584.052 2.408-1.119 3.398-6.132 5.942-6.01 2.125.103 3.013 3.674 4.594 5.601 1.725 2.102 4.274 2.16 6.521 2.934 6.043 2.082 10.18 9.68 12.675 17.426 1.758 5.459 2.975 11.265 5.211 16.392s5.788 9.664 10.147 10.405c9.25-4.13 16.365-14.024 23.089-23.575L300 14" />
+            </svg>
+          </div>
+        </div>
+        <div class="weather-minor">
+          <div class="weather-value-small">64%</div>
+          <div class="weather-value-small">1250hPA
+            <div class="weather-value-icon-small">↘︎</div>
+          </div>
+        </div>
+      </div>
+      <div class="a-box-fullscreen">
+        <div class="a-box-fullscreen--inner">
+          <button aria-label="close" class="btn--integrated close-a-box-fullscreen">✕</button>
+          <button aria-label="swipe to close" class="btn--integrated swipeclose-a-box-fullscreen"><div class="--inner"></div></button>
+        </div>
+      </div>
+    </section>
+    <section class="a-box" id="dataBox08">
+      <div class="a-box-preview">
+        <div class="weather-title">Sensor XYZ</div>
+        <div class="weather-major">
+          <div class="weather-value-big">24°</div>
+          <div class="weather-graph">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100" xml:space="preserve">
+              <path stroke="#000" stroke-width="2" fill="none"
+                d="m0 76.65 19.234-18.647c6.661-6.458 13.436-12.998 21.155-16.706 1.416-.68 2.91-1.27 4.401-1.016 5.755.979 6.616 12.071 10.92 17.34 2.843 3.477 7.455 4.671 8.838 9.512.448 1.566.467 3.308.898 4.882 1.67 6.088 8.382 6.216 12.288 2.455 3.906-3.761 6.243-9.84 9.823-14.155 1.91-2.301 4.136-4.057 6.345-5.797l13.735-10.813c3.774-2.97 7.938-6.05 12.25-5.147 8.508 1.782 11.123 16.407 16.866 25.1 7.538 11.409 21.218 11.879 31.293 4.95 10.074-6.928 17.266-19.573 23.637-32.22 3.651-7.248 8.434-15.541 14.887-14.84 1.201.131 2.443.582 3.584.052 2.408-1.119 3.398-6.132 5.942-6.01 2.125.103 3.013 3.674 4.594 5.601 1.725 2.102 4.274 2.16 6.521 2.934 6.043 2.082 10.18 9.68 12.675 17.426 1.758 5.459 2.975 11.265 5.211 16.392s5.788 9.664 10.147 10.405c9.25-4.13 16.365-14.024 23.089-23.575L300 14" />
+            </svg>
+          </div>
+        </div>
+        <div class="weather-minor">
+          <div class="weather-value-small">64%</div>
+          <div class="weather-value-small">1250hPA
+            <div class="weather-value-icon-small">↘︎</div>
+          </div>
+        </div>
+      </div>
+      <div class="a-box-fullscreen">
+        <div class="a-box-fullscreen--inner">
+          <button aria-label="close" class="btn--integrated close-a-box-fullscreen">✕</button>
+          <button aria-label="swipe to close" class="btn--integrated swipeclose-a-box-fullscreen"><div class="--inner"></div></button>
+        </div>
+      </div>
+    </section>
+    <section class="a-box" id="dataBox09">
+      <div class="a-box-preview">
+        <div class="weather-title">Sensor XYZ</div>
+        <div class="weather-major">
+          <div class="weather-value-big">24°</div>
+          <div class="weather-graph">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100" xml:space="preserve">
+              <path stroke="#000" stroke-width="2" fill="none"
+                d="m0 76.65 19.234-18.647c6.661-6.458 13.436-12.998 21.155-16.706 1.416-.68 2.91-1.27 4.401-1.016 5.755.979 6.616 12.071 10.92 17.34 2.843 3.477 7.455 4.671 8.838 9.512.448 1.566.467 3.308.898 4.882 1.67 6.088 8.382 6.216 12.288 2.455 3.906-3.761 6.243-9.84 9.823-14.155 1.91-2.301 4.136-4.057 6.345-5.797l13.735-10.813c3.774-2.97 7.938-6.05 12.25-5.147 8.508 1.782 11.123 16.407 16.866 25.1 7.538 11.409 21.218 11.879 31.293 4.95 10.074-6.928 17.266-19.573 23.637-32.22 3.651-7.248 8.434-15.541 14.887-14.84 1.201.131 2.443.582 3.584.052 2.408-1.119 3.398-6.132 5.942-6.01 2.125.103 3.013 3.674 4.594 5.601 1.725 2.102 4.274 2.16 6.521 2.934 6.043 2.082 10.18 9.68 12.675 17.426 1.758 5.459 2.975 11.265 5.211 16.392s5.788 9.664 10.147 10.405c9.25-4.13 16.365-14.024 23.089-23.575L300 14" />
+            </svg>
+          </div>
+        </div>
+        <div class="weather-minor">
+          <div class="weather-value-small">64%</div>
+          <div class="weather-value-small">1250hPA
+            <div class="weather-value-icon-small">↘︎</div>
+          </div>
+        </div>
+      </div>
+      <div class="a-box-fullscreen">
+        <div class="a-box-fullscreen--inner">
+          <button aria-label="close" class="btn--integrated close-a-box-fullscreen">✕</button>
+          <button aria-label="swipe to close" class="btn--integrated swipeclose-a-box-fullscreen"><div class="--inner"></div></button>
+        </div>
+      </div>
+    </section>
+    <section class="a-box" id="dataBox10">
+      <div class="a-box-preview">
+        <div class="weather-title">Sensor XYZ</div>
+        <div class="weather-major">
+          <div class="weather-value-big">24°</div>
+          <div class="weather-graph">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100" xml:space="preserve">
+              <path stroke="#000" stroke-width="2" fill="none"
+                d="m0 76.65 19.234-18.647c6.661-6.458 13.436-12.998 21.155-16.706 1.416-.68 2.91-1.27 4.401-1.016 5.755.979 6.616 12.071 10.92 17.34 2.843 3.477 7.455 4.671 8.838 9.512.448 1.566.467 3.308.898 4.882 1.67 6.088 8.382 6.216 12.288 2.455 3.906-3.761 6.243-9.84 9.823-14.155 1.91-2.301 4.136-4.057 6.345-5.797l13.735-10.813c3.774-2.97 7.938-6.05 12.25-5.147 8.508 1.782 11.123 16.407 16.866 25.1 7.538 11.409 21.218 11.879 31.293 4.95 10.074-6.928 17.266-19.573 23.637-32.22 3.651-7.248 8.434-15.541 14.887-14.84 1.201.131 2.443.582 3.584.052 2.408-1.119 3.398-6.132 5.942-6.01 2.125.103 3.013 3.674 4.594 5.601 1.725 2.102 4.274 2.16 6.521 2.934 6.043 2.082 10.18 9.68 12.675 17.426 1.758 5.459 2.975 11.265 5.211 16.392s5.788 9.664 10.147 10.405c9.25-4.13 16.365-14.024 23.089-23.575L300 14" />
+            </svg>
+          </div>
+        </div>
+        <div class="weather-minor">
+          <div class="weather-value-small">64%</div>
+          <div class="weather-value-small">1250hPA
+            <div class="weather-value-icon-small">↘︎</div>
+          </div>
+        </div>
+      </div>
+      <div class="a-box-fullscreen">
+        <div class="a-box-fullscreen--inner">
+          <button aria-label="close" class="btn--integrated close-a-box-fullscreen">✕</button>
+          <button aria-label="swipe to close" class="btn--integrated swipeclose-a-box-fullscreen"><div class="--inner"></div></button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+
 </body>
 
 </html>

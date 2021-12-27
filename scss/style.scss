@@ -1,3 +1,255 @@
+:root {
+  --base: hsl(0, 0%, 100%);
+  --base-transparent: hsla(0, 0%, 100%, 0.5);
+  --object: hsl(0, 0%, 0%);
+  --object-transparent: hsl(0, 0%, 0%, 0.5);
+  --highlight-a: #b3f9ff;
+  --highlight-b: #cef7a6;
+  --highlight-c: #f5e6d5;
+  --box-style-shadow: hsl(0, 0%, 100%, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --base: hsl(0, 0%, 0%);
+    --base-transparent: hsla(0, 0%, 0%, 0.25);
+    --object: hsl(0, 0%, 90%);
+    --object-transparent: hsl(0, 0%, 100%, 0.5);
+    --highlight-a: #331241;
+    --highlight-b: #6e1d82;
+    --highlight-c: #306ea2;
+    --box-style-shadow: hsl(0, 0%, 0%, 0.25);
+  }
+}
+
+$gird-base-unit: 1.25rem;
+$border-radius: calc(#{$gird-base-unit} / 1);
+
+$font-size-10: calc((100vw - #{$gird-base-unit} * 2) / 335 * 10);
+$font-size-12: calc((100vw - #{$gird-base-unit} * 2) / 335 * 12);
+$font-size-14: calc((100vw - #{$gird-base-unit} * 2) / 335 * 14);
+$font-size-16: calc((100vw - #{$gird-base-unit} * 2) / 335 * 16);
+$font-size-24: calc((100vw - #{$gird-base-unit} * 2) / 335 * 24);
+$font-size-32: calc((100vw - #{$gird-base-unit} * 2) / 335 * 32);
+$font-size-40: calc((100vw - #{$gird-base-unit} * 2) / 335 * 40);
+$font-size-48: calc((100vw - #{$gird-base-unit} * 2) / 335 * 48);
+$font-size-56: calc((100vw - #{$gird-base-unit} * 2) / 335 * 56);
+
+$font-size-grid-10: calc((100vw - #{$gird-base-unit} * 7) / 235 * 10);
+$font-size-grid-12: calc((100vw - #{$gird-base-unit} * 7) / 235 * 12);
+$font-size-grid-14: calc((100vw - #{$gird-base-unit} * 7) / 235 * 14);
+$font-size-grid-16: calc((100vw - #{$gird-base-unit} * 7) / 235 * 16);
+$font-size-grid-24: calc((100vw - #{$gird-base-unit} * 7) / 235 * 24);
+$font-size-grid-32: calc((100vw - #{$gird-base-unit} * 7) / 235 * 32);
+$font-size-grid-40: calc((100vw - #{$gird-base-unit} * 7) / 235 * 40);
+$font-size-grid-48: calc((100vw - #{$gird-base-unit} * 7) / 235 * 48);
+$font-size-grid-56: calc((100vw - #{$gird-base-unit} * 7) / 235 * 56);
+
+@mixin box-style {
+  border-radius: $border-radius;
+  box-shadow: inset 0 calc(#{$gird-base-unit} / 1.5) calc(#{$gird-base-unit} * 1.5) var(--box-style-shadow);
+}
+
 body {
-  font-family: Arial, Helvetica, sans-serif;
-} 
+  font-family: Helvetica, sans-serif;
+  background: transparent;
+  color: var(--object);
+  background-color: var(--highlight-a);
+}
+
+body::before {
+  content: ' ';
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -9999;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--highlight-a);
+  background-image: url(src/bg-light.png);
+  background-size: contain;
+}
+
+@media (prefers-color-scheme: dark) {
+  body::before {
+    background-image: url(src/bg-dark.png);
+  }
+}
+
+.btn {
+  &--integrated {
+    background-color: transparent;
+    border: none;
+    color: var(--object);
+  }
+}
+
+.swipeclose-a-box-fullscreen {
+  height: 2.25rem;
+  width: 40%;
+  padding: 1rem;
+
+  & .--inner {
+    display: flex;
+    background-color: var(--object-transparent);
+    border-radius: 1rem;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.--swipeclose {
+  transform: translateY(-100vh);
+  transition: 0.5s;
+}
+
+header {
+  padding: $gird-base-unit $gird-base-unit 0 $gird-base-unit;
+
+  h1 {
+    font-size: $font-size-16;
+    font-weight: 400;
+    text-align: center;
+    letter-spacing: 0.1rem;
+    margin: calc(#{$gird-base-unit}/ 4) 0;
+  }
+  h2 {
+    font-size: $font-size-10;
+    font-weight: 600;
+    letter-spacing: 0.05rem;
+    text-transform: uppercase;
+    text-align: center;
+    margin: calc(#{$gird-base-unit}/ 4) 0;
+  }
+}
+
+main {
+  padding: $gird-base-unit;
+  margin-bottom: 4rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: $gird-base-unit;
+
+  .a-box {
+    position: relative;
+    aspect-ratio: 1 / 1;
+  }
+
+  @keyframes a-box-fullscreen {
+    from {
+      transform: scale(0.85);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+
+  .a-box-fullscreen {
+    display: none;
+    opacity: 0;
+    transition: 0.15s ease;
+    background-color: transparent;
+
+    &.--active {
+      display: flex;
+      opacity: 1;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 99999;
+      width: 100%;
+      height: 100%;
+      //height: -webkit-fill-available;
+      animation-name: a-box-fullscreen;
+      animation-duration: 0.15s;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    &--inner {
+      @include box-style;
+
+      position: relative;
+      height: calc(100% - #{$gird-base-unit} * 4);
+      width: calc(100% - #{$gird-base-unit} * 2);
+      margin: $gird-base-unit;
+      padding: $gird-base-unit;
+      background-color: var(--base-transparent);
+
+      & .close-a-box-fullscreen {
+        position: absolute;
+        top: $gird-base-unit;
+        right: $gird-base-unit;
+        font-size: $font-size-grid-24;
+        padding: 0;
+        height: 2rem;
+        width: 2rem;
+      }
+
+      & .swipeclose-a-box-fullscreen {
+        position: absolute;
+        bottom: 0;
+        left: 30%;
+      }
+    }
+  }
+
+  .a-box-preview {
+    transform: scale(1);
+    @include box-style;
+
+    position: absolute;
+    width: calc(100% - 2 * #{$gird-base-unit});
+    height: calc(100% - 2 * #{$gird-base-unit});
+    padding: $gird-base-unit;
+    background-color: var(--base-transparent);
+    transition: 0.4s cubic-bezier(0.5, -1, 0.7, 1);
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &.--active {
+      z-index: 9998;
+      opacity: 0;
+      transform: scale(4);
+    }
+
+    .weather {
+      &-title {
+        font-size: $font-size-grid-10;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+
+      &-value-big {
+        font-size: $font-size-grid-48;
+      }
+
+      &-value-small {
+        font-size: $font-size-grid-12;
+      }
+
+      &-value-icon-small {
+        font-size: $font-size-grid-12;
+      }
+
+      &-graph > svg {
+        width: 100%;
+        & > * {
+          stroke: var(--object);
+        }
+      }
+
+      &-minor {
+        display: flex;
+        justify-content: space-between;
+
+        & > * {
+          display: flex;
+        }
+      }
+    }
+  }
+}
