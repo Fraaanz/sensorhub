@@ -1,7 +1,7 @@
 <svg class="svg-c-percentage" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" xml:space="preserve">
   <circle class="svg-c-percentage-bg" cx="24" cy="24" r="21.1676" fill="none" stroke="#000" stroke-width="1" stroke-linecap="round" stroke-dasharray="100, 133" transform="rotate(135, 24, 24)" />
   <circle class="svg-c-percentage-value" cx="24" cy="24" r="21.1676" fill="none" stroke="hsl(0, 0%, 50%)" stroke-width="4" stroke-linecap="round" stroke-dasharray="0, 133" transform="rotate(135, 24, 24)">
-    <animate class="svg-c-percentage-value-ani" attributeName="stroke-dasharray" from="0 133" to="0 133" dur="0.5s" repeatCount="1" />
-    <animate class="svg-c-percentage-value-ani-color" attributeName="stroke" from="hsl(200, 1000%, 50%)" to="hsl(0, 100%, 50%)" dur="0.5s" repeatCount="1" />
+    <animate class="svg-c-percentage-value-ani" attributeName="stroke-dasharray" from="0 133" to="0 133" dur="0.85s" repeatCount="1" />
+    <animate class="svg-c-percentage-value-ani-color" attributeName="stroke" from="hsl(200, 1000%, 50%)" to="hsl(0, 100%, 50%)" dur="0.85s" repeatCount="1" />
   </circle>
 </svg>

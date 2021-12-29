@@ -75,7 +75,7 @@ function getConfig(json) {
     //console.log('dataSVG = ' + dataSVG);
 
     var countUp = document.querySelector('#dataBox' + idReplacement + ' .weather-value-current-temp');
-    animateValue(countUp, 0, dataTemp, 500);
+    animateValue(countUp, 0, dataTemp, 750);
 
     var currentHumi = document.querySelector('#dataBox' + idReplacement + ' .weather-value-current-humi');
     currentHumi.innerHTML = dataHumi;
