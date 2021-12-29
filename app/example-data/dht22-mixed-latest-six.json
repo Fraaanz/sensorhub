@@ -1,0 +1,50 @@
+[
+  {
+    "id": "1",
+    "location": "berlin",
+    "sensorname": "garden",
+    "time": "2021-12-28 14:41:20",
+    "temp": "12.30",
+    "humi": "74.30"
+  },
+  {
+    "id": "2",
+    "location": "berlin",
+    "sensorname": "field",
+    "time": "2021-12-28 14:02:28",
+    "temp": "13.10",
+    "humi": "73.30"
+  },
+  {
+    "id": "3",
+    "location": "berlin",
+    "sensorname": "garden",
+    "time": "2021-12-28 13:23:27",
+    "temp": "11.80",
+    "humi": "71.30"
+  },
+  {
+    "id": "4",
+    "location": "berlin",
+    "sensorname": "home",
+    "time": "2021-12-28 12:44:36",
+    "temp": "10.50",
+    "humi": "65.30"
+  },
+  {
+    "id": "5",
+    "location": "berlin",
+    "sensorname": "home",
+    "time": "2021-12-28 12:05:40",
+    "temp": "9.50",
+    "humi": "77.30"
+  },
+  {
+    "id": "6",
+    "location": "berlin",
+    "sensorname": "field",
+    "time": "2021-12-28 11:26:44",
+    "temp": "10.60",
+    "humi": "60.30"
+  }
+]

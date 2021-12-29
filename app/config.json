@@ -1,0 +1,27 @@
+[
+  {
+    "_comment": "Set ID from 01 to XX for each sensor. – Do not use IDs from database items.",
+    "sensors": [
+      {
+        "id": "01",
+        "sensorname": "garden"
+      },
+      {
+        "id": "02",
+        "sensorname": "raspberry field"
+      },
+      {
+        "id": "03",
+        "sensorname": "home"
+      },
+      {
+        "id": "04",
+        "sensorname": "strawberry field"
+      },
+      {
+        "id": "05",
+        "sensorname": "balcony"
+      }      
+    ]
+  }
+]

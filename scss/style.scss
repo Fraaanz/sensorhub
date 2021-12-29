@@ -1,12 +1,26 @@
+@font-face {
+  font-family: "Inter";
+  src: url("src/fonts/Inter-Regular.woff2") format("woff2"), url("src/fonts/Inter-Regular.woff2") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("src/fonts/Inter-Bold.woff2") format("woff2"), url("src/fonts/Inter-Bold.woff2") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+
 :root {
   --base: hsl(0, 0%, 100%);
   --base-transparent: hsla(0, 0%, 100%, 0.5);
   --object: hsl(0, 0%, 0%);
-  --object-transparent: hsl(0, 0%, 0%, 0.5);
-  --highlight-a: #b3f9ff;
-  --highlight-b: #cef7a6;
-  --highlight-c: #f5e6d5;
+  --object-transparent: hsl(0, 0%, 0%, 0.25);
+  --highlight-a: hsl(181, 66%, 85%);
+  --highlight-b: hsl(40, 93%, 89%);
+  --highlight-c: hsl(107, 91%, 87%);
   --box-style-shadow: hsl(0, 0%, 100%, 1);
+  --svg-bg: hsl(0, 0%, 0%, 0.25);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -14,17 +28,19 @@
     --base: hsl(0, 0%, 0%);
     --base-transparent: hsla(0, 0%, 0%, 0.25);
     --object: hsl(0, 0%, 90%);
-    --object-transparent: hsl(0, 0%, 100%, 0.5);
-    --highlight-a: #331241;
-    --highlight-b: #6e1d82;
-    --highlight-c: #306ea2;
+    --object-transparent: hsl(0, 0%, 100%, 0.25);
+    --highlight-a: hsl(282, 57%, 16%);
+    --highlight-b: hsl(288, 39%, 29%);
+    --highlight-c: hsl(220, 46%, 36%);
     --box-style-shadow: hsl(0, 0%, 0%, 0.25);
+    --svg-bg: hsl(0, 0%, 100%, 0.25);
   }
 }
 
 $gird-base-unit: 1.25rem;
-$border-radius: calc(#{$gird-base-unit} / 1);
+$border-radius: 10vw;
 
+$font-size-8: calc((100vw - #{$gird-base-unit} * 2) / 335 * 8);
 $font-size-10: calc((100vw - #{$gird-base-unit} * 2) / 335 * 10);
 $font-size-12: calc((100vw - #{$gird-base-unit} * 2) / 335 * 12);
 $font-size-14: calc((100vw - #{$gird-base-unit} * 2) / 335 * 14);
@@ -35,15 +51,16 @@ $font-size-40: calc((100vw - #{$gird-base-unit} * 2) / 335 * 40);
 $font-size-48: calc((100vw - #{$gird-base-unit} * 2) / 335 * 48);
 $font-size-56: calc((100vw - #{$gird-base-unit} * 2) / 335 * 56);
 
-$font-size-grid-10: calc((100vw - #{$gird-base-unit} * 7) / 235 * 10);
-$font-size-grid-12: calc((100vw - #{$gird-base-unit} * 7) / 235 * 12);
-$font-size-grid-14: calc((100vw - #{$gird-base-unit} * 7) / 235 * 14);
-$font-size-grid-16: calc((100vw - #{$gird-base-unit} * 7) / 235 * 16);
-$font-size-grid-24: calc((100vw - #{$gird-base-unit} * 7) / 235 * 24);
-$font-size-grid-32: calc((100vw - #{$gird-base-unit} * 7) / 235 * 32);
-$font-size-grid-40: calc((100vw - #{$gird-base-unit} * 7) / 235 * 40);
-$font-size-grid-48: calc((100vw - #{$gird-base-unit} * 7) / 235 * 48);
-$font-size-grid-56: calc((100vw - #{$gird-base-unit} * 7) / 235 * 56);
+$font-size-grid-8: calc((100vw - #{$gird-base-unit} * 3) / 315 * 8);
+$font-size-grid-10: calc((100vw - #{$gird-base-unit} * 3) / 315 * 10);
+$font-size-grid-12: calc((100vw - #{$gird-base-unit} * 3) / 315 * 12);
+$font-size-grid-14: calc((100vw - #{$gird-base-unit} * 3) / 315 * 14);
+$font-size-grid-16: calc((100vw - #{$gird-base-unit} * 3) / 315 * 16);
+$font-size-grid-24: calc((100vw - #{$gird-base-unit} * 3) / 315 * 24);
+$font-size-grid-32: calc((100vw - #{$gird-base-unit} * 3) / 315 * 32);
+$font-size-grid-40: calc((100vw - #{$gird-base-unit} * 3) / 315 * 40);
+$font-size-grid-48: calc((100vw - #{$gird-base-unit} * 3) / 315 * 48);
+$font-size-grid-56: calc((100vw - #{$gird-base-unit} * 3) / 315 * 56);
 
 @mixin box-style {
   border-radius: $border-radius;
@@ -51,14 +68,14 @@ $font-size-grid-56: calc((100vw - #{$gird-base-unit} * 7) / 235 * 56);
 }
 
 body {
-  font-family: Helvetica, sans-serif;
+  font-family: "Inter", sans-serif;
   background: transparent;
   color: var(--object);
   background-color: var(--highlight-a);
 }
 
 body::before {
-  content: ' ';
+  content: " ";
   display: block;
   position: fixed;
   top: 0;
@@ -77,6 +94,57 @@ body::before {
   }
 }
 
+// Tell User its a portrait app:
+.orientation-warning {
+  display: none;
+}
+@media screen and (orientation: landscape) {
+  .orientation-warning {
+    display: flex;
+    position: fixed;
+    z-index: 999999;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--base-transparent);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    flex-direction: column;
+    align-content: space-around;
+    align-items: center;
+    justify-content: center;
+
+    & svg {
+      width: 33vh;
+    }
+
+    &--large-text {
+      font-size: 1.75vw;
+      font-weight: 600;
+      text-align: center;
+      margin: 1vw;
+    }
+
+    &--small-text {
+      font-size: 1vw;
+      font-weight: 400;
+      letter-spacing: 0.10rem;
+      text-transform: uppercase;
+      text-align: center;
+      margin: 1vw;
+    }
+  }
+}
+
+.preload {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}
+
 .btn {
   &--integrated {
     background-color: transparent;
@@ -85,10 +153,10 @@ body::before {
   }
 }
 
-.swipeclose-a-box-fullscreen {
-  height: 2.25rem;
-  width: 40%;
-  padding: 1rem;
+.swipeclose-box-fullscreen {
+  height: calc(2.25rem + #{$gird-base-unit} * 2);
+  width: 50%;
+  padding: calc(1rem + #{$gird-base-unit});
 
   & .--inner {
     display: flex;
@@ -101,23 +169,22 @@ body::before {
 
 .--swipeclose {
   transform: translateY(-100vh);
-  transition: 0.5s;
+  transition: 0.2s cubic-bezier(0.5, 0, 1, 0.5);
 }
 
 header {
   padding: $gird-base-unit $gird-base-unit 0 $gird-base-unit;
 
   h1 {
-    font-size: $font-size-16;
-    font-weight: 400;
+    font-size: $font-size-14;
+    font-weight: 600;
     text-align: center;
-    letter-spacing: 0.1rem;
     margin: calc(#{$gird-base-unit}/ 4) 0;
   }
   h2 {
-    font-size: $font-size-10;
-    font-weight: 600;
-    letter-spacing: 0.05rem;
+    font-size: $font-size-8;
+    font-weight: 400;
+    letter-spacing: 0.10rem;
     text-transform: uppercase;
     text-align: center;
     margin: calc(#{$gird-base-unit}/ 4) 0;
@@ -130,13 +197,20 @@ main {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: $gird-base-unit;
+  overflow-y: hidden;
 
-  .a-box {
+  .box {
     position: relative;
     aspect-ratio: 1 / 1;
+
+    &-empty {
+      position: relative;
+      aspect-ratio: 1 / 1;
+      opacity: 0.25;
+    }
   }
 
-  @keyframes a-box-fullscreen {
+  @keyframes box-fullscreen {
     from {
       transform: scale(0.85);
     }
@@ -145,70 +219,34 @@ main {
     }
   }
 
-  .a-box-fullscreen {
-    display: none;
-    opacity: 0;
-    transition: 0.15s ease;
-    background-color: transparent;
-
-    &.--active {
-      display: flex;
-      opacity: 1;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 99999;
-      width: 100%;
-      height: 100%;
-      //height: -webkit-fill-available;
-      animation-name: a-box-fullscreen;
-      animation-duration: 0.15s;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
+  @keyframes box-loading {
+    0% {
+      opacity: 0.05;
     }
-
-    &--inner {
-      @include box-style;
-
-      position: relative;
-      height: calc(100% - #{$gird-base-unit} * 4);
-      width: calc(100% - #{$gird-base-unit} * 2);
-      margin: $gird-base-unit;
-      padding: $gird-base-unit;
-      background-color: var(--base-transparent);
-
-      & .close-a-box-fullscreen {
-        position: absolute;
-        top: $gird-base-unit;
-        right: $gird-base-unit;
-        font-size: $font-size-grid-24;
-        padding: 0;
-        height: 2rem;
-        width: 2rem;
-      }
-
-      & .swipeclose-a-box-fullscreen {
-        position: absolute;
-        bottom: 0;
-        left: 30%;
-      }
+    50% {
+      opacity: 0.25;
+      //filter: blur(2px);
+    }
+    100% {
+      opacity: 0.05;
     }
   }
 
-  .a-box-preview {
+  .box-preview {
     transform: scale(1);
     @include box-style;
 
     position: absolute;
-    width: calc(100% - 2 * #{$gird-base-unit});
-    height: calc(100% - 2 * #{$gird-base-unit});
-    padding: $gird-base-unit;
+    width: calc(100% - 6vw);
+    height: calc(100% - 6vw);
+    padding: 3vw;
     background-color: var(--base-transparent);
     transition: 0.4s cubic-bezier(0.5, -1, 0.7, 1);
     opacity: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
 
     &.--active {
       z-index: 9998;
@@ -216,23 +254,55 @@ main {
       transform: scale(4);
     }
 
+    &.--loading > * {
+      animation-name: box-loading;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+    }
+
     .weather {
+      &-major {
+        & .svg-c-percentage {
+          position: absolute;
+          top: 21%;
+          left: 20%;
+          width: 60%;
+
+          &-value {
+            filter: drop-shadow(0px 0px 1px var(--base));
+          } 
+
+          &-bg {
+            stroke: var(--svg-bg);
+          }
+        }
+      }
+
       &-title {
-        font-size: $font-size-grid-10;
-        font-weight: 600;
+        font-size: $font-size-grid-8;
+        font-weight: 400;
         text-transform: uppercase;
+        letter-spacing: 0.10rem;
       }
 
       &-value-big {
-        font-size: $font-size-grid-48;
+        position: relative;
+        top: 6%;
+        left: 0.5vw;
+        font-size: $font-size-grid-32;
       }
 
       &-value-small {
-        font-size: $font-size-grid-12;
+        font-size: $font-size-grid-10;
+        margin: 0 10% 0 0;
       }
 
       &-value-icon-small {
-        font-size: $font-size-grid-12;
+        font-size: $font-size-grid-10;
+      }
+
+      &-value-current-humi, &-value-current-pres {
+        font-weight: 600;
       }
 
       &-graph > svg {
@@ -249,6 +319,62 @@ main {
         & > * {
           display: flex;
         }
+      }
+    }
+  }
+
+  .box-fullscreen {
+    display: none;
+    opacity: 0;
+    transition: 0.15s ease;
+    background-color: transparent;
+
+    &.--active {
+      display: flex;
+      opacity: 1;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 99999;
+      width: 100%;
+      height: 100%;
+      //height: -webkit-fill-available;
+      animation-name: box-fullscreen;
+      animation-duration: 0.15s;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    &.--become-inactive {
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
+      transition: 0.3s;
+    }
+
+    &--inner {
+      @include box-style;
+
+      position: relative;
+      height: calc(100% - #{$gird-base-unit} * 4);
+      width: calc(100% - #{$gird-base-unit} * 2);
+      margin: $gird-base-unit;
+      padding: $gird-base-unit;
+      background-color: var(--base-transparent);
+
+      & .close-box-fullscreen {
+        position: absolute;
+        top: $gird-base-unit;
+        right: $gird-base-unit;
+        font-size: $font-size-grid-24;
+        padding: 0;
+        height: 2rem;
+        width: 2rem;
+      }
+
+      & .swipeclose-box-fullscreen {
+        position: absolute;
+        bottom: -$gird-base-unit;
+        left: 25%;
       }
     }
   }
