@@ -15,7 +15,7 @@ var loadFile = function (filePath, done) {
   xhr.send();
 }
 // paths to all of your files
-var myFiles = ["config.json", "example-data/dht22-mixed-single-value-query.json", "example-data/dht22-mixed-latest-six.json"];
+var myFiles = ["config.json", "example-data/dht22-single-value-query.json", "example-data/dht22-latest-six.json"];
 // where you want to store the data
 
 var jsonData = [];

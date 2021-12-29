@@ -16,7 +16,7 @@ function animateValue(obj, start, end, duration) {
 // Get data 
 
 var xmlhttp = new XMLHttpRequest();
-var url = "example-data/dht22-mixed-single-value-query.json";
+var url = "example-data/dht22-single-value-query.json";
 
 xmlhttp.onreadystatechange = function () {
   if (this.readyState == 4 && this.status == 200) {
