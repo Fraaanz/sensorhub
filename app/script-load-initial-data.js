@@ -18,13 +18,15 @@ function animateValue(obj, start, end, duration) {
 var xmlhttp = new XMLHttpRequest();
 var url = "example-data/dht22-single-value-query.json";
 
-xmlhttp.onreadystatechange = function () {
-  if (this.readyState == 4 && this.status == 200) {
+xmlhttp.onload = function () {
+  //if (this.readyState == 4 && this.status == 200) {
     var json = JSON.parse(this.responseText);
     getConfig(json);
-  }
+  //}
 };
 xmlhttp.open("GET", url, true);
+xmlhttp.setRequestHeader("Cache-Control", "no-store");
+xmlhttp.setRequestHeader("Vary", "*");
 xmlhttp.send();
 
 function getConfig(json) {
