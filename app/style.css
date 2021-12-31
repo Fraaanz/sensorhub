@@ -85,7 +85,7 @@ body::before {
     .orientation-warning--small-text {
       font-size: 1vw;
       font-weight: 400;
-      letter-spacing: 0.10rem;
+      letter-spacing: 0.1rem;
       text-transform: uppercase;
       text-align: center;
       margin: 1vw; } }
@@ -127,7 +127,7 @@ header {
   header h2 {
     font-size: calc((100vw - 1.25rem * 2) / 335 * 8);
     font-weight: 400;
-    letter-spacing: 0.10rem;
+    letter-spacing: 0.1rem;
     text-transform: uppercase;
     text-align: center;
     margin: calc(1.25rem/ 4) 0; }
@@ -141,7 +141,11 @@ main {
   overflow-y: hidden; }
   main .box {
     position: relative;
+    width: 100%;
     aspect-ratio: 1 / 1; }
+    @supports not (aspect-ratio: auto) {
+      main .box {
+        height: calc(50vw - 1.25rem * 1.5); } }
     main .box-empty {
       position: relative;
       aspect-ratio: 1 / 1;
@@ -196,7 +200,7 @@ main {
       font-size: calc((100vw - 1.25rem * 3) / 315 * 8);
       font-weight: 400;
       text-transform: uppercase;
-      letter-spacing: 0.10rem; }
+      letter-spacing: 0.1rem; }
     main .box-preview .weather-value-big {
       position: relative;
       top: 6%;
