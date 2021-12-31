@@ -193,7 +193,6 @@ header {
 
 main {
   padding: $gird-base-unit;
-  margin-bottom: 4rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: $gird-base-unit;
@@ -357,6 +356,24 @@ main {
       transition: 0.3s;
     }
 
+    &--contentplaceholder {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      align-content: center;
+      flex-direction: column;
+      justify-content: center;
+
+      & p {
+        padding: calc(#{$gird-base-unit} * 3);
+        text-align: center;
+        font-size: $font-size-12;
+        letter-spacing: calc(#{$font-size-12} / 12);
+        line-height: $gird-base-unit;
+        color: var(--object);
+      }
+    }
+
     &--inner {
       @include box-style;
 
@@ -371,7 +388,7 @@ main {
         position: absolute;
         top: $gird-base-unit;
         right: $gird-base-unit;
-        font-size: $font-size-grid-24;
+        font-size: calc(#{$gird-base-unit} * 1.125);
         padding: 0;
         height: 2rem;
         width: 2rem;

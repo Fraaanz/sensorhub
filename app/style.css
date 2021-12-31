@@ -134,7 +134,6 @@ header {
 
 main {
   padding: 1.25rem;
-  margin-bottom: 4rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 1.25rem;
@@ -244,6 +243,20 @@ main {
       backdrop-filter: blur(2px);
       -webkit-backdrop-filter: blur(2px);
       transition: 0.3s; }
+    main .box-fullscreen--contentplaceholder {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      align-content: center;
+      flex-direction: column;
+      justify-content: center; }
+      main .box-fullscreen--contentplaceholder p {
+        padding: calc(1.25rem * 3);
+        text-align: center;
+        font-size: calc((100vw - 1.25rem * 2) / 335 * 12);
+        letter-spacing: calc(calc((100vw - 1.25rem * 2) / 335 * 12) / 12);
+        line-height: 1.25rem;
+        color: var(--object); }
     main .box-fullscreen--inner {
       border-radius: 10vw;
       box-shadow: inset 0 calc(1.25rem / 1.5) calc(1.25rem * 1.5) var(--box-style-shadow);
@@ -257,7 +270,7 @@ main {
         position: absolute;
         top: 1.25rem;
         right: 1.25rem;
-        font-size: calc((100vw - 1.25rem * 3) / 315 * 24);
+        font-size: calc(1.25rem * 1.125);
         padding: 0;
         height: 2rem;
         width: 2rem; }
