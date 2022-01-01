@@ -50,15 +50,13 @@ console.log(jsonData);
 var xmlhttp = new XMLHttpRequest();
 var url = "config.json";
 
-xmlhttp.onload = function () {
-  //if (this.readyState == 4 && this.status == 200) {
+xmlhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
     var json = JSON.parse(this.responseText);
     getConfig(json);
-  //}
+  }
 };
-xmlhttp.open("GET", url, true);
-xmlhttp.setRequestHeader("Cache-Control", "no-store");
-xmlhttp.setRequestHeader("Vary", "*");
+xmlhttp.open("GET", url, false);
 xmlhttp.send();
 
 function getConfig(json) {
