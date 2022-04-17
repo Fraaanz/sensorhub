@@ -4,23 +4,28 @@
     "sensors": [
       {
         "id": "01",
-        "sensorname": "garden"
+        "sensorname": "garden",
+        "sensordisplayname": "garden"
       },
       {
         "id": "02",
-        "sensorname": "raspberry field"
+        "sensorname": "raspberry field",
+        "sensordisplayname": "raspberry field"
       },
       {
         "id": "03",
-        "sensorname": "home"
+        "sensorname": "home",
+        "sensordisplayname": "home"
       },
       {
         "id": "04",
-        "sensorname": "strawberry field"
+        "sensorname": "strawberry field",
+        "sensordisplayname": "strawberry field"
       },
       {
         "id": "05",
-        "sensorname": "balcony"
+        "sensorname": "balcony",
+        "sensordisplayname": "balcony"
       }      
     ]
   }
